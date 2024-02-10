@@ -1,0 +1,123 @@
+Error- 30-Dec-18 1:33:36 PM: Sending failed
+Error- 30-Dec-18 1:33:36 PM: Error message: the received message is not valid!
+Error- 30-Dec-18 1:35:56 PM: Sending failed
+Error- 30-Dec-18 1:35:57 PM: Error message: the received message is not valid!
+Error- 30-Dec-18 2:01:16 PM: Sending failed
+Error- 30-Dec-18 2:01:16 PM: Error message: the received message is not valid!
+Error- 30-Dec-18 2:28:09 PM: Sending failed
+Error- 30-Dec-18 2:28:09 PM: Error message: the received message is not valid!
+Error- 30-Dec-18 3:02:24 PM: Sending failed
+Error- 30-Dec-18 3:02:24 PM: Error message: Unable to cast object of type 'URCP.Core.SmsNotification' to type 'AutoNotify.Core.Domain.ThiqahSms'.
+Error- 30-Dec-18 4:03:07 PM: Send Sms Notification Web Service Error System.InvalidOperationException: The username is not provided. Specify username in ClientCredentials.
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   at System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at AutoNotify.ThirdParties.Sms.ThiqahSmsSender.<SendAsync>d__4.MoveNext()
+Error- 30-Dec-18 4:03:07 PM: Sending failed
+Error- 30-Dec-18 4:03:07 PM: Error message: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+Error- 30-Dec-18 4:09:25 PM: Send Sms Notification Web Service Error System.InvalidOperationException: The username is not provided. Specify username in ClientCredentials.
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Channels.ServiceChannel.SendAsyncResult.End(SendAsyncResult result)
+   at System.ServiceModel.Channels.ServiceChannel.EndCall(String action, Object[] outs, IAsyncResult result)
+   at System.ServiceModel.Channels.ServiceChannelProxy.TaskCreator.<>c__DisplayClass7_0`1.<CreateGenericTask>b__0(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at AutoNotify.ThirdParties.Sms.ThiqahSmsSender.<SendAsync>d__4.MoveNext()
+Error- 30-Dec-18 4:09:25 PM: Sending failed
+Error- 30-Dec-18 4:09:25 PM: Error message: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+Error- 30-Dec-18 4:13:52 PM: The requested language template  is not avilable  - NoTemplateError
+Error- 30-Dec-18 4:13:52 PM: Sending failed
+Error- 30-Dec-18 4:13:52 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:19:08 PM: The requested language template  is not avilable  - NoTemplateError
+Error- 30-Dec-18 4:19:08 PM: Sending failed
+Error- 30-Dec-18 4:19:09 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:20:02 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 4:20:02 PM: Sending failed
+Error- 30-Dec-18 4:20:02 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:23:01 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 4:23:01 PM: Sending failed
+Error- 30-Dec-18 4:23:01 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:23:11 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 4:23:11 PM: Sending failed
+Error- 30-Dec-18 4:23:11 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:40:28 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 4:40:29 PM: Sending failed
+Error- 30-Dec-18 4:40:29 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:42:09 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 4:42:10 PM: Sending failed
+Error- 30-Dec-18 4:42:10 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:45:21 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 4:45:22 PM: Sending failed
+Error- 30-Dec-18 4:45:22 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:46:48 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 4:46:48 PM: Sending failed
+Error- 30-Dec-18 4:46:48 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:49:59 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 4:49:59 PM: Sending failed
+Error- 30-Dec-18 4:49:59 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:55:16 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 4:55:16 PM: Sending failed
+Error- 30-Dec-18 4:55:16 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 4:56:35 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 4:56:35 PM: Sending failed
+Error- 30-Dec-18 4:56:35 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 5:00:28 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 5:00:28 PM: Sending failed
+Error- 30-Dec-18 5:00:28 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 5:13:18 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 5:13:18 PM: Sending failed
+Error- 30-Dec-18 5:13:18 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 5:14:00 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 5:14:00 PM: Sending failed
+Error- 30-Dec-18 5:14:00 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 5:19:59 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 5:19:59 PM: Sending failed
+Error- 30-Dec-18 5:19:59 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 5:20:52 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 5:20:52 PM: Sending failed
+Error- 30-Dec-18 5:20:52 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 5:21:36 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 5:21:36 PM: Sending failed
+Error- 30-Dec-18 5:21:36 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 5:51:57 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 5:51:57 PM: Sending failed
+Error- 30-Dec-18 5:51:57 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 6:12:15 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 6:12:15 PM: Sending failed
+Error- 30-Dec-18 6:12:15 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 6:13:05 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 6:13:05 PM: Sending failed
+Error- 30-Dec-18 6:13:05 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 6:15:16 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 6:15:25 PM: Sending failed
+Error- 30-Dec-18 6:15:28 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 6:20:00 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 6:20:00 PM: Sending failed
+Error- 30-Dec-18 6:20:00 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 6:31:54 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 6:32:50 PM: Sending failed
+Error- 30-Dec-18 6:32:51 PM: Error message: Error, for more details look into the detail structure
+Error- 30-Dec-18 6:40:10 PM: The message is duplicated - DuplicateMessage
+Error- 30-Dec-18 6:40:11 PM: Sending failed
+Error- 30-Dec-18 6:40:11 PM: Error message: Error, for more details look into the detail structure
+Error- 07-Jan-19 1:41:40 PM: System.ArgumentNullException: Value cannot be null.
+Parameter name: String
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at AutoNotify.Services.Infrastructure.ApplicationSettings.get_RetryTimes()
+   at AutoNotify.Services.NotificationService.<NotifyAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at AutoNotify.Services.NotificationManager.<RunTask>d__23.MoveNext()

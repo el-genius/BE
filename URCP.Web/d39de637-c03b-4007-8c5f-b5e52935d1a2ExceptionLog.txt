@@ -1,0 +1,250 @@
+Opened connection at 23/04/40 04:06:05 م +03:00
+
+
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.Countries','dbo.Users','dbo.UserClaims','dbo.UserLogins','dbo.Roles','dbo.RoleClaims','dbo.EmailAttachments','dbo.EmailNotifications','dbo.Invoices','dbo.Requests','dbo.Lookups','dbo.LookupTypes','dbo.MortgeageInquiries','dbo.MortgageInquiryDetails','dbo.Mortgages','dbo.MortgageImplementationAgents','dbo.MortgageAttachments','dbo.MortgageObjections','dbo.Notifications','dbo.Settings','dbo.SmsNotifications','dbo.UsersRoles')
+    OR t.TABLE_NAME = 'EdmMetadata'
+
+
+-- Executing at 23/04/40 04:06:05 م +03:00
+
+-- Completed in 36 ms with result: 22
+
+
+
+Closed connection at 23/04/40 04:06:05 م +03:00
+
+Opened connection at 23/04/40 04:06:06 م +03:00
+
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+
+
+-- p__linq__0: 'URCP.SqlServerRepository.Migrations.Configuration' (Type = String, Size = 4000)
+
+-- Executing at 23/04/40 04:06:07 م +03:00
+
+-- Completed in 42 ms with result: SqlDataReader
+
+
+
+Closed connection at 23/04/40 04:06:07 م +03:00
+
+Opened connection at 23/04/40 04:06:07 م +03:00
+
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+
+
+-- p__linq__0: 'URCP.SqlServerRepository.Migrations.Configuration' (Type = String, Size = 4000)
+
+-- Executing at 23/04/40 04:06:07 م +03:00
+
+-- Completed in 33 ms with result: SqlDataReader
+
+
+
+Closed connection at 23/04/40 04:06:08 م +03:00
+
+Opened connection at 23/04/40 04:06:08 م +03:00
+
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[Users] AS [Extent1]
+        WHERE ([Extent1].[Discriminator] = N'User') AND ([Extent1].[UserName] = @p__linq__0)
+    )  AS [GroupBy1]
+
+
+-- p__linq__0: 'superadmin' (Type = String, Size = 4000)
+
+-- Executing at 23/04/40 04:06:09 م +03:00
+
+-- Completed in 48 ms with result: SqlDataReader
+
+
+
+Closed connection at 23/04/40 04:06:09 م +03:00
+
+Opened connection at 23/04/40 04:06:09 م +03:00
+
+SELECT 
+    [Project1].[Id] AS [Id], 
+    [Project1].[C1] AS [C1], 
+    [Project1].[UserName] AS [UserName], 
+    [Project1].[Email] AS [Email], 
+    [Project1].[EmailConfirmed] AS [EmailConfirmed], 
+    [Project1].[PasswordHash] AS [PasswordHash], 
+    [Project1].[SecurityStamp] AS [SecurityStamp], 
+    [Project1].[ConcurrencyStamp] AS [ConcurrencyStamp], 
+    [Project1].[PhoneNumber] AS [PhoneNumber], 
+    [Project1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [Project1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [Project1].[LockoutEnd] AS [LockoutEnd], 
+    [Project1].[LockoutEnabled] AS [LockoutEnabled], 
+    [Project1].[AccessFailedCount] AS [AccessFailedCount], 
+    [Project1].[Active] AS [Active], 
+    [Project1].[IsADUser] AS [IsADUser], 
+    [Project1].[FullName] AS [FullName], 
+    [Project1].[EnglishFullName] AS [EnglishFullName], 
+    [Project1].[Birthdate] AS [Birthdate], 
+    [Project1].[Mobile] AS [Mobile], 
+    [Project1].[IdentityType] AS [IdentityType], 
+    [Project1].[IdentityNumber] AS [IdentityNumber], 
+    [Project1].[NationalAddress] AS [NationalAddress], 
+    [Project1].[IsDeleted] AS [IsDeleted], 
+    [Project1].[UserType] AS [UserType], 
+    [Project1].[LastLogin] AS [LastLogin], 
+    [Project1].[ForceUpdate] AS [ForceUpdate], 
+    [Project1].[CreatedByID] AS [CreatedByID], 
+    [Project1].[UpdatedByID] AS [UpdatedByID], 
+    [Project1].[CreatedAt] AS [CreatedAt], 
+    [Project1].[UpdatedAt] AS [UpdatedAt], 
+    [Project1].[C2] AS [C2], 
+    [Project1].[Id1] AS [Id1], 
+    [Project1].[Name] AS [Name], 
+    [Project1].[NormalizedName] AS [NormalizedName], 
+    [Project1].[ParentId] AS [ParentId], 
+    [Project1].[ConcurrencyStamp1] AS [ConcurrencyStamp1]
+    FROM ( SELECT 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[UserName] AS [UserName], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[EmailConfirmed] AS [EmailConfirmed], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[SecurityStamp] AS [SecurityStamp], 
+        [Extent1].[ConcurrencyStamp] AS [ConcurrencyStamp], 
+        [Extent1].[PhoneNumber] AS [PhoneNumber], 
+        [Extent1].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+        [Extent1].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+        [Extent1].[LockoutEnd] AS [LockoutEnd], 
+        [Extent1].[LockoutEnabled] AS [LockoutEnabled], 
+        [Extent1].[AccessFailedCount] AS [AccessFailedCount], 
+        [Extent1].[Active] AS [Active], 
+        [Extent1].[IsADUser] AS [IsADUser], 
+        [Extent1].[FullName] AS [FullName], 
+        [Extent1].[EnglishFullName] AS [EnglishFullName], 
+        [Extent1].[Birthdate] AS [Birthdate], 
+        [Extent1].[Mobile] AS [Mobile], 
+        [Extent1].[IdentityType] AS [IdentityType], 
+        [Extent1].[IdentityNumber] AS [IdentityNumber], 
+        [Extent1].[NationalAddress] AS [NationalAddress], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent1].[UserType] AS [UserType], 
+        [Extent1].[LastLogin] AS [LastLogin], 
+        [Extent1].[ForceUpdate] AS [ForceUpdate], 
+        [Extent1].[CreatedByID] AS [CreatedByID], 
+        [Extent1].[UpdatedByID] AS [UpdatedByID], 
+        [Extent1].[CreatedAt] AS [CreatedAt], 
+        [Extent1].[UpdatedAt] AS [UpdatedAt], 
+        '0X0X' AS [C1], 
+        [Join1].[Id] AS [Id1], 
+        [Join1].[Name] AS [Name], 
+        [Join1].[NormalizedName] AS [NormalizedName], 
+        [Join1].[ParentId] AS [ParentId], 
+        [Join1].[ConcurrencyStamp] AS [ConcurrencyStamp1], 
+        CASE WHEN ([Join1].[UserID] IS NULL) THEN CAST(NULL AS int) ELSE 1 END AS [C2]
+        FROM  [dbo].[Users] AS [Extent1]
+        LEFT OUTER JOIN  (SELECT [Extent2].[UserID] AS [UserID], [Extent3].[Id] AS [Id], [Extent3].[Name] AS [Name], [Extent3].[NormalizedName] AS [NormalizedName], [Extent3].[ParentId] AS [ParentId], [Extent3].[ConcurrencyStamp] AS [ConcurrencyStamp]
+            FROM  [dbo].[UsersRoles] AS [Extent2]
+            INNER JOIN [dbo].[Roles] AS [Extent3] ON [Extent3].[Id] = [Extent2].[RoleID] ) AS [Join1] ON [Extent1].[Id] = [Join1].[UserID]
+        WHERE ([Extent1].[Discriminator] = N'User') AND ([Extent1].[UserName] = @p__linq__0)
+    )  AS [Project1]
+    ORDER BY [Project1].[Id] ASC, [Project1].[C2] ASC
+
+
+-- p__linq__0: 'superadmin' (Type = String, Size = 4000)
+
+-- Executing at 23/04/40 04:06:09 م +03:00
+
+-- Completed in 32 ms with result: SqlDataReader
+
+
+
+Closed connection at 23/04/40 04:06:09 م +03:00
+
+Opened connection at 23/04/40 04:09:23 م +03:00
+
+SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Content] AS [Content], 
+    [Extent1].[ToSms] AS [ToSms], 
+    [Extent1].[IsEnabled] AS [IsEnabled], 
+    [Extent1].[IsSent] AS [IsSent], 
+    [Extent1].[RetryTimes] AS [RetryTimes], 
+    [Extent1].[SentDateTime] AS [SentDateTime], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[TemplateValues] AS [TemplateValues], 
+    [Extent1].[TemplateCode] AS [TemplateCode], 
+    [Extent1].[CreatedByID] AS [CreatedByID], 
+    [Extent1].[UpdatedByID] AS [UpdatedByID], 
+    [Extent1].[CreatedAt] AS [CreatedAt], 
+    [Extent1].[UpdatedAt] AS [UpdatedAt]
+    FROM [dbo].[SmsNotifications] AS [Extent1]
+    WHERE 0 = [Extent1].[Id]
+
+
+-- Executing at 23/04/40 04:09:23 م +03:00
+
+-- Completed in 25 ms with result: SqlDataReader
+
+
+
+Closed connection at 23/04/40 04:09:23 م +03:00
+
+Opened connection at 23/04/40 04:09:23 م +03:00
+
+Started transaction at 23/04/40 04:09:23 م +03:00
+
+INSERT [dbo].[SmsNotifications]([Content], [ToSms], [IsEnabled], [IsSent], [RetryTimes], [SentDateTime], [Status], [TemplateValues], [TemplateCode], [CreatedByID], [UpdatedByID], [CreatedAt], [UpdatedAt])
+VALUES (NULL, @0, @1, @2, @3, NULL, @4, @5, @6, NULL, NULL, @7, NULL)
+SELECT [Id]
+FROM [dbo].[SmsNotifications]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+
+
+-- @0: '00966565969703|00966582330123' (Type = String, Size = -1)
+
+-- @1: 'False' (Type = Boolean)
+
+-- @2: 'False' (Type = Boolean)
+
+-- @3: '0' (Type = Int16)
+
+-- @4: '0' (Type = Int16)
+
+-- @5: '0000000002|1234567|250.00|خدمات أعمالي|144|05/01/2019' (Type = String, Size = -1)
+
+-- @6: 'mcico00002' (Type = String, Size = -1)
+
+-- @7: '23/04/40 04:09:23 م' (Type = DateTime2)
+
+-- Executing at 23/04/40 04:09:23 م +03:00
+
+-- Completed in 30 ms with result: SqlDataReader
+
+
+
+Committed transaction at 23/04/40 04:09:23 م +03:00
+
+Closed connection at 23/04/40 04:09:23 م +03:00
+

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://eai_dev001.mci.gov.sa/CRServices/1.1/CRService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CRServices" />
+  <xs:import schemaLocation="https://eai_dev001.mci.gov.sa/CRServices/1.1/CRService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://eai_dev001.mci.gov.sa/CRServices/1.1/CRService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CRServices.ServiceObjects" />
+  <xs:element name="SearchForCR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="SearchForCrRequest" nillable="true" type="q1:SearchForCrRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchForCRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="SearchForCRResult" nillable="true" type="q2:SearchForCrResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchForCompanyCR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="SearchForCompanyCrRequest" nillable="true" type="q3:SearchForCompanyCrRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchForCompanyCRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="SearchForCompanyCRResult" nillable="true" type="q4:SearchForCompanyCrResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCRInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CRNoList" nillable="true" type="q5:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCRInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="GetCRInformationResult" nillable="true" type="q6:ArrayOfCRInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LocationLookup">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LocationLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="LocationLookupResult" nillable="true" type="q7:ArrayOfLookup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BusinessTypeLookup">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BusinessTypeLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="BusinessTypeLookupResult" nillable="true" type="q8:ArrayOfLookup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NationalityLookup">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NationalityLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="NationalityLookupResult" nillable="true" type="q9:ArrayOfLookup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCRPersons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CRNO" type="xs:long" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RelationTypes" nillable="true" type="q10:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCRPersonsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="GetCRPersonsResult" nillable="true" type="q11:ArrayOfPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCRPersonsForCompanyCR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CRNO" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCRPersonsForCompanyCRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="GetCRPersonsForCompanyCRResult" nillable="true" type="q12:ArrayOfPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCRManagers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CRNO" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCRManagersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="GetCRManagersResult" nillable="true" type="q13:ArrayOfPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCrRelated">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CRNO" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCrRelatedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="GetCrRelatedResult" nillable="true" type="q14:ArrayOfCRInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCrListByNID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCrListByNIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="GetCrListByNIDResult" nillable="true" type="q15:ArrayOfCRsByNIDResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCrListByPartyID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CRServices.ServiceObjects" minOccurs="0" name="request" nillable="true" type="q16:CRsByPartyIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCrListByPartyIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CRServices.ServiceObjects" minOccurs="0" name="GetCrListByPartyIDResult" nillable="true" type="q17:ArrayOfCRsByPartyIDResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEFileContactList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="ReferenceDetailsList" nillable="true" type="q18:ArrayOfReferenceDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEFileContactListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CRServices" minOccurs="0" name="GetEFileContactListResult" nillable="true" type="q19:ArrayOfReferenceDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCRContactInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CRServices.ServiceObjects" minOccurs="0" name="request" nillable="true" type="q20:CRContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCRContactInformationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

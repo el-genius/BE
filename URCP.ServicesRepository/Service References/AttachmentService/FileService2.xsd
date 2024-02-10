@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.PeekService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.PeekService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract" />
+  <xs:complexType name="PeekRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileId" nillable="true" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PeekRequest" nillable="true" type="tns:PeekRequest" />
+  <xs:complexType name="PeekResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSize" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FileType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract" minOccurs="0" name="Metadata" nillable="true" type="q1:ArrayOfFileMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PeekResponse" nillable="true" type="tns:PeekResponse" />
+</xs:schema>

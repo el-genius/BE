@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/EFile.Core.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EFile.Core.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:complexType name="EFileServicePerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthDateHijri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CityID" type="xs:int" />
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CityTelephoneCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactMobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistrictID" type="xs:int" />
+      <xs:element minOccurs="0" name="DistrictName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormalIdentityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullDistrict" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasWaselAccount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InterContactMobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterContactTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueAuthority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IssuePlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegalStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="NationalityID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POBox" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonGUID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PersonImage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonType" type="xs:int" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelephoneCodeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserBlackListedServices" nillable="true" type="tns:EFileServiceBlocked" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServicePerson" nillable="true" type="tns:EFileServicePerson" />
+  <xs:complexType name="EFileServiceBlocked">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="EFileServiceBlocked" nillable="true" type="tns:EFileServiceBlocked" />
+  <xs:complexType name="EFileServiceContactOfficer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthDateHijri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CityTelephoneCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactMobile" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ContactOfficerCRs" type="q1:KeyValuePairOfstringstring" />
+      <xs:element minOccurs="0" name="ContactTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistrictName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormalIdentityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasWaselAccount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InterContactMobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterContactTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueAuthority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IssuePlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegalStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="POBox" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonGUID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PersonImage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelephoneCodeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserBlackListedServices" nillable="true" type="tns:EFileServiceBlocked" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceContactOfficer" nillable="true" type="tns:EFileServiceContactOfficer" />
+  <xs:complexType name="EFileServiceAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CityID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsWasel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Neighborhood" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NeighborhoodID" type="xs:int" />
+      <xs:element minOccurs="0" name="POBox" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceAddress" nillable="true" type="tns:EFileServiceAddress" />
+  <xs:complexType name="EFileServicePersonProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Base64Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EducationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServicePersonProfile" nillable="true" type="tns:EFileServicePersonProfile" />
+  <xs:complexType name="EFileServicePersonAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CityID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistrictID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasWaselAccount" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longtitude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POBox" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServicePersonAddress" nillable="true" type="tns:EFileServicePersonAddress" />
+  <xs:complexType name="ArrayOfEFileServiceDelegated">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EFileServiceDelegated" nillable="true" type="tns:EFileServiceDelegated" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEFileServiceDelegated" nillable="true" type="tns:ArrayOfEFileServiceDelegated" />
+  <xs:complexType name="EFileServiceDelegated">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DelegateType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasReference" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceDelegated" nillable="true" type="tns:EFileServiceDelegated" />
+  <xs:complexType name="EFileServiceDelegation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Beneficiaries" nillable="true" type="tns:ArrayOfEFileServiceDelegateInfo" />
+      <xs:element minOccurs="0" name="Delegators" nillable="true" type="tns:ArrayOfEFileServiceDelegateInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceDelegation" nillable="true" type="tns:EFileServiceDelegation" />
+  <xs:complexType name="ArrayOfEFileServiceDelegateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EFileServiceDelegateInfo" nillable="true" type="tns:EFileServiceDelegateInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEFileServiceDelegateInfo" nillable="true" type="tns:ArrayOfEFileServiceDelegateInfo" />
+  <xs:complexType name="EFileServiceDelegateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DelegateType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceDelegateInfo" nillable="true" type="tns:EFileServiceDelegateInfo" />
+  <xs:complexType name="ArrayOfEFileServiceDelegationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EFileServiceDelegationDetails" nillable="true" type="tns:EFileServiceDelegationDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEFileServiceDelegationDetails" nillable="true" type="tns:ArrayOfEFileServiceDelegationDetails" />
+  <xs:complexType name="EFileServiceDelegationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeneficiaryNID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeneficiaryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DelegatedReferences" nillable="true" type="tns:ArrayOfEFileServiceDelegated" />
+      <xs:element minOccurs="0" name="DelegatorNID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DelegatorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpiryDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceDelegationDetails" nillable="true" type="tns:EFileServiceDelegationDetails" />
+  <xs:complexType name="ArrayOfEFileServiceBlackListed">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EFileServiceBlackListed" nillable="true" type="tns:EFileServiceBlackListed" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEFileServiceBlackListed" nillable="true" type="tns:ArrayOfEFileServiceBlackListed" />
+  <xs:complexType name="EFileServiceBlackListed">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HasReference" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceBlackListed" nillable="true" type="tns:EFileServiceBlackListed" />
+  <xs:complexType name="ArrayOfEFileServiceRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EFileServiceRole" nillable="true" type="tns:EFileServiceRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEFileServiceRole" nillable="true" type="tns:ArrayOfEFileServiceRole" />
+  <xs:complexType name="EFileServiceRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DelegateType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasReference" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RoleID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceRole" nillable="true" type="tns:EFileServiceRole" />
+  <xs:complexType name="ArrayOfEFileServiceCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EFileServiceCountry" nillable="true" type="tns:EFileServiceCountry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEFileServiceCountry" nillable="true" type="tns:ArrayOfEFileServiceCountry" />
+  <xs:complexType name="EFileServiceCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceCountry" nillable="true" type="tns:EFileServiceCountry" />
+  <xs:complexType name="ArrayOfEFileServiceCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EFileServiceCity" nillable="true" type="tns:EFileServiceCity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEFileServiceCity" nillable="true" type="tns:ArrayOfEFileServiceCity" />
+  <xs:complexType name="EFileServiceCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityID" type="xs:int" />
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceCity" nillable="true" type="tns:EFileServiceCity" />
+  <xs:complexType name="ArrayOfEFileServiceDistrict">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EFileServiceDistrict" nillable="true" type="tns:EFileServiceDistrict" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEFileServiceDistrict" nillable="true" type="tns:ArrayOfEFileServiceDistrict" />
+  <xs:complexType name="EFileServiceDistrict">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DistrictID" type="xs:int" />
+      <xs:element minOccurs="0" name="DistrictName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EFileServiceDistrict" nillable="true" type="tns:EFileServiceDistrict" />
+</xs:schema>

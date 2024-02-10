@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CRService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_ICRService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://eai_dev001.mci.gov.sa/CRServices/1.1/CRService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://eai_dev001.mci.gov.sa/CRServices/1.1/CRService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CRServices" />
+      <xsd:import schemaLocation="https://eai_dev001.mci.gov.sa/CRServices/1.1/CRService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://eai_dev001.mci.gov.sa/CRServices/1.1/CRService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://eai_dev001.mci.gov.sa/CRServices/1.1/CRService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CRServices.ServiceObjects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICRService_SearchForCR_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchForCR" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_SearchForCR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchForCRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_SearchForCR_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q1:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_SearchForCompanyCR_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchForCompanyCR" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_SearchForCompanyCR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchForCompanyCRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_SearchForCompanyCR_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q2:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCRInformation" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCRInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRInformation_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q3:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_LocationLookup_InputMessage">
+    <wsdl:part name="parameters" element="tns:LocationLookup" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_LocationLookup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LocationLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_LocationLookup_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q4:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_BusinessTypeLookup_InputMessage">
+    <wsdl:part name="parameters" element="tns:BusinessTypeLookup" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_BusinessTypeLookup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BusinessTypeLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_BusinessTypeLookup_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q5:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_NationalityLookup_InputMessage">
+    <wsdl:part name="parameters" element="tns:NationalityLookup" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_NationalityLookup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NationalityLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_NationalityLookup_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q6:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRPersons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCRPersons" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRPersons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCRPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRPersons_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q7:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRPersonsForCompanyCR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCRPersonsForCompanyCR" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRPersonsForCompanyCR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCRPersonsForCompanyCRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRPersonsForCompanyCR_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q8:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRManagers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCRManagers" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRManagers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCRManagersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCRManagers_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q9:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCrRelated_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrRelated" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCrRelated_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrRelatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCrRelated_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q10:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCrListByNID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrListByNID" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCrListByNID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrListByNIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCrListByNID_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q11:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCrListByPartyID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrListByPartyID" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCrListByPartyID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrListByPartyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetCrListByPartyID_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q12:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetEFileContactList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEFileContactList" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetEFileContactList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEFileContactListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_GetEFileContactList_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q13:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_AddCRContactInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCRContactInformation" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_AddCRContactInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCRContactInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRService_AddCRContactInformation_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/CRServices" name="detail" element="q14:EAICustomError" />
+  </wsdl:message>
+  <wsdl:portType name="ICRService">
+    <wsdl:operation name="SearchForCR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/SearchForCR" message="tns:ICRService_SearchForCR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/SearchForCRResponse" message="tns:ICRService_SearchForCR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/SearchForCREAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_SearchForCR_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchForCompanyCR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/SearchForCompanyCR" message="tns:ICRService_SearchForCompanyCR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/SearchForCompanyCRResponse" message="tns:ICRService_SearchForCompanyCR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/SearchForCompanyCREAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_SearchForCompanyCR_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/GetCRInformation" message="tns:ICRService_GetCRInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/GetCRInformationResponse" message="tns:ICRService_GetCRInformation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/GetCRInformationEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_GetCRInformation_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LocationLookup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/LocationLookup" message="tns:ICRService_LocationLookup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/LocationLookupResponse" message="tns:ICRService_LocationLookup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/LocationLookupEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_LocationLookup_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BusinessTypeLookup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/BusinessTypeLookup" message="tns:ICRService_BusinessTypeLookup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/BusinessTypeLookupResponse" message="tns:ICRService_BusinessTypeLookup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/BusinessTypeLookupEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_BusinessTypeLookup_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NationalityLookup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/NationalityLookup" message="tns:ICRService_NationalityLookup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/NationalityLookupResponse" message="tns:ICRService_NationalityLookup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/NationalityLookupEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_NationalityLookup_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRPersons">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/GetCRPersons" message="tns:ICRService_GetCRPersons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/GetCRPersonsResponse" message="tns:ICRService_GetCRPersons_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/GetCRPersonsEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_GetCRPersons_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRPersonsForCompanyCR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/GetCRPersonsForCompanyCR" message="tns:ICRService_GetCRPersonsForCompanyCR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/GetCRPersonsForCompanyCRResponse" message="tns:ICRService_GetCRPersonsForCompanyCR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/GetCRPersonsForCompanyCREAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_GetCRPersonsForCompanyCR_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCRManagers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/GetCRManagers" message="tns:ICRService_GetCRManagers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/GetCRManagersResponse" message="tns:ICRService_GetCRManagers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/GetCRManagersEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_GetCRManagers_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCrRelated">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/GetCrRelated" message="tns:ICRService_GetCrRelated_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/GetCrRelatedResponse" message="tns:ICRService_GetCrRelated_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/GetCrRelatedEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_GetCrRelated_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCrListByNID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/GetCrListByNID" message="tns:ICRService_GetCrListByNID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/GetCrListByNIDResponse" message="tns:ICRService_GetCrListByNID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/GetCrListByNIDEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_GetCrListByNID_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCrListByPartyID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/GetCrListByPartyID" message="tns:ICRService_GetCrListByPartyID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/GetCrListByPartyIDResponse" message="tns:ICRService_GetCrListByPartyID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/GetCrListByPartyIDEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_GetCrListByPartyID_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEFileContactList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/GetEFileContactList" message="tns:ICRService_GetEFileContactList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/GetEFileContactListResponse" message="tns:ICRService_GetEFileContactList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/GetEFileContactListEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_GetEFileContactList_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCRContactInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRService/AddCRContactInformation" message="tns:ICRService_AddCRContactInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRService/AddCRContactInformationResponse" message="tns:ICRService_AddCRContactInformation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICRService/AddCRContactInformationEAICustomErrorFault" name="EAICustomErrorFault" message="tns:ICRService_AddCRContactInformation_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICRService" type="tns:ICRService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ICRService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchForCR">
+      <soap:operation soapAction="http://tempuri.org/ICRService/SearchForCR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchForCompanyCR">
+      <soap:operation soapAction="http://tempuri.org/ICRService/SearchForCompanyCR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRInformation">
+      <soap:operation soapAction="http://tempuri.org/ICRService/GetCRInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LocationLookup">
+      <soap:operation soapAction="http://tempuri.org/ICRService/LocationLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BusinessTypeLookup">
+      <soap:operation soapAction="http://tempuri.org/ICRService/BusinessTypeLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NationalityLookup">
+      <soap:operation soapAction="http://tempuri.org/ICRService/NationalityLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRPersons">
+      <soap:operation soapAction="http://tempuri.org/ICRService/GetCRPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRPersonsForCompanyCR">
+      <soap:operation soapAction="http://tempuri.org/ICRService/GetCRPersonsForCompanyCR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCRManagers">
+      <soap:operation soapAction="http://tempuri.org/ICRService/GetCRManagers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrRelated">
+      <soap:operation soapAction="http://tempuri.org/ICRService/GetCrRelated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrListByNID">
+      <soap:operation soapAction="http://tempuri.org/ICRService/GetCrListByNID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrListByPartyID">
+      <soap:operation soapAction="http://tempuri.org/ICRService/GetCrListByPartyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEFileContactList">
+      <soap:operation soapAction="http://tempuri.org/ICRService/GetEFileContactList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddCRContactInformation">
+      <soap:operation soapAction="http://tempuri.org/ICRService/AddCRContactInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CRService">
+    <wsdl:port name="BasicHttpBinding_ICRService" binding="tns:BasicHttpBinding_ICRService">
+      <soap:address location="https://eai_dev001.mci.gov.sa/CRServices/1.1/CRService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

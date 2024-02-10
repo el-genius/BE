@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.UploadService" />
+  <xs:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.PeekService" />
+  <xs:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.DownloadService" />
+  <xs:element name="Upload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.UploadService" minOccurs="0" name="request" nillable="true" type="q1:UploadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.UploadService" minOccurs="0" name="UploadResult" nillable="true" type="q2:UploadResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Peek">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.PeekService" minOccurs="0" name="request" nillable="true" type="q3:PeekRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PeekResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.PeekService" minOccurs="0" name="PeekResult" nillable="true" type="q4:PeekResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Download">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.DownloadService" minOccurs="0" name="request" nillable="true" type="q5:DownloadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.DownloadService" minOccurs="0" name="DownloadResult" nillable="true" type="q6:DownloadResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

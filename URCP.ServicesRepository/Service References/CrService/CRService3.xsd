@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CRServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CRServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://eai_dev001.mci.gov.sa/CRServices/1.1/CRService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="SearchForCrRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CRStatus" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="FromRowNo" type="xs:int" />
+      <xs:element minOccurs="0" name="OnlyMainCR" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RowCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchForCrRequest" nillable="true" type="tns:SearchForCrRequest" />
+  <xs:complexType name="SearchForCrResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CRInfoList" nillable="true" type="tns:ArrayOfSearchCRInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchForCrResponse" nillable="true" type="tns:SearchForCrResponse" />
+  <xs:complexType name="ArrayOfSearchCRInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchCRInfo" nillable="true" type="tns:SearchCRInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchCRInfo" nillable="true" type="tns:ArrayOfSearchCRInfo" />
+  <xs:complexType name="SearchCRInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activities" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessType" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessTypeNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRLocation" type="xs:int" />
+      <xs:element minOccurs="0" name="CRLocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRLocationNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRNationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRNationalityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRNationalityNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRNo" type="xs:long" />
+      <xs:element minOccurs="0" name="CRRegion" type="xs:int" />
+      <xs:element minOccurs="0" name="CRRegionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRRegionNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Capital" type="xs:double" />
+      <xs:element minOccurs="0" name="CompanyDuration" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpiryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Is_eCR" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssueDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainCR" type="xs:long" />
+      <xs:element minOccurs="0" name="NationalNo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PHONE1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POBOX1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POBOX2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Building" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_CityId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_IsWasel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Lat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Lng" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_NeighbourhoodId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_NeighbourhoodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_OfficeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchCRInfo" nillable="true" type="tns:SearchCRInfo" />
+  <xs:complexType name="EAICustomError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessMessageAr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessMessageEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EAICustomError" nillable="true" type="tns:EAICustomError" />
+  <xs:complexType name="SearchForCompanyCrRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CRName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromRowNo" type="xs:int" />
+      <xs:element minOccurs="0" name="RowCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchForCompanyCrRequest" nillable="true" type="tns:SearchForCompanyCrRequest" />
+  <xs:complexType name="SearchForCompanyCrResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CRCompanyInfoList" nillable="true" type="tns:ArrayOfSearchCompanyCRInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchForCompanyCrResponse" nillable="true" type="tns:SearchForCompanyCrResponse" />
+  <xs:complexType name="ArrayOfSearchCompanyCRInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchCompanyCRInfo" nillable="true" type="tns:SearchCompanyCRInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchCompanyCRInfo" nillable="true" type="tns:ArrayOfSearchCompanyCRInfo" />
+  <xs:complexType name="SearchCompanyCRInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activities" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessType" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessTypeNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRLocation" type="xs:int" />
+      <xs:element minOccurs="0" name="CRLocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRLocationNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRNo" type="xs:long" />
+      <xs:element minOccurs="0" name="CRRegion" type="xs:int" />
+      <xs:element minOccurs="0" name="CRRegionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRRegionNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Capital" type="xs:double" />
+      <xs:element minOccurs="0" name="CompanyDuration" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IssueDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchCompanyCRInfo" nillable="true" type="tns:SearchCompanyCRInfo" />
+  <xs:complexType name="ArrayOfCRInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CRInfo" nillable="true" type="tns:CRInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCRInfo" nillable="true" type="tns:ArrayOfCRInfo" />
+  <xs:complexType name="CRInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activities" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessType" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessTypeNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRLocation" type="xs:int" />
+      <xs:element minOccurs="0" name="CRLocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRLocationNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRNationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRNationalityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRNationalityNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRNationality_ISO3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRNo" type="xs:long" />
+      <xs:element minOccurs="0" name="CRRegion" type="xs:int" />
+      <xs:element minOccurs="0" name="CRRegionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRRegionNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRStatusMessageAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRStatusMessageEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanceledDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanceledReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Capital" type="xs:double" />
+      <xs:element minOccurs="0" name="CompanyDuration" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpiryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAX2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssueDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainCR" type="xs:long" />
+      <xs:element minOccurs="0" name="NationalNo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PHONE1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHONE2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POBOX1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POBOX2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaidCapital" type="xs:double" />
+      <xs:element minOccurs="0" name="SharePrice" type="xs:double" />
+      <xs:element minOccurs="0" name="TransDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Building" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_CityId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_ContractID" type="xs:int" />
+      <xs:element minOccurs="0" name="eCR_Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_FiscalDateType" type="xs:int" />
+      <xs:element minOccurs="0" name="eCR_FiscalEndDay" type="xs:int" />
+      <xs:element minOccurs="0" name="eCR_FiscalEndMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="eCR_IsWasel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Lat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Lng" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_NeighbourhoodId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_NeighbourhoodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_OfficeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eCR_Website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CRInfo" nillable="true" type="tns:CRInfo" />
+  <xs:complexType name="ArrayOfLookup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Lookup" nillable="true" type="tns:Lookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLookup" nillable="true" type="tns:ArrayOfLookup" />
+  <xs:complexType name="Lookup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Lookup" nillable="true" type="tns:Lookup" />
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardNo" type="xs:long" />
+      <xs:element minOccurs="0" name="Entered_CR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_Type" type="xs:int" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="National_ID" type="xs:long" />
+      <xs:element minOccurs="0" name="National_ID_CreatedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalityEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalityID" type="xs:int" />
+      <xs:element minOccurs="0" name="Nationality_ISO3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyBirthLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyGross" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyPercint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyShareCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationTypeEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="mainCR" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfCRsByNIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CRsByNIDResponse" nillable="true" type="tns:CRsByNIDResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCRsByNIDResponse" nillable="true" type="tns:ArrayOfCRsByNIDResponse" />
+  <xs:complexType name="CRsByNIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="CR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRExpiry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentCRnumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyBirthLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyBirthYear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyGross" type="xs:float" />
+      <xs:element minOccurs="0" name="PartyID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyIDtype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyIssueDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyNationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyNationalityID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyPercint" type="xs:float" />
+      <xs:element minOccurs="0" name="PartyShare" type="xs:float" />
+      <xs:element minOccurs="0" name="RelationID" type="xs:int" />
+      <xs:element minOccurs="0" name="RelationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CRsByNIDResponse" nillable="true" type="tns:CRsByNIDResponse" />
+  <xs:complexType name="ArrayOfReferenceDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferenceDetails" nillable="true" type="tns:ReferenceDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferenceDetails" nillable="true" type="tns:ArrayOfReferenceDetails" />
+  <xs:complexType name="ReferenceDetails">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CRPersonRelationType" nillable="true" type="q2:ArrayOfint" />
+      <xs:element minOccurs="0" name="ReferenceNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceType" type="tns:ReferenceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferenceDetails" nillable="true" type="tns:ReferenceDetails" />
+  <xs:simpleType name="ReferenceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CRNo" />
+      <xs:enumeration value="NID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReferenceType" nillable="true" type="tns:ReferenceType" />
+  <xs:complexType name="ArrayOfReferenceDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferenceDetailsResponse" nillable="true" type="tns:ReferenceDetailsResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferenceDetailsResponse" nillable="true" type="tns:ArrayOfReferenceDetailsResponse" />
+  <xs:complexType name="ReferenceDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReferenceNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceType" type="tns:ReferenceType" />
+      <xs:element minOccurs="0" name="Persons" nillable="true" type="tns:ArrayOfPersonContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferenceDetailsResponse" nillable="true" type="tns:ReferenceDetailsResponse" />
+  <xs:complexType name="ArrayOfPersonContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonContact" nillable="true" type="tns:PersonContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonContact" nillable="true" type="tns:ArrayOfPersonContact" />
+  <xs:complexType name="PersonContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PersonName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonContact" nillable="true" type="tns:PersonContact" />
+</xs:schema>

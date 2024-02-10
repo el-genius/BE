@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/NotificationsGateway" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NotificationsGateway" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="SendSMSNotificationRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsArabic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MobileNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefrenceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemplateCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TemplateValues" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendSMSNotificationRequest" nillable="true" type="tns:SendSMSNotificationRequest" />
+  <xs:complexType name="NotificationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationResponse" nillable="true" type="tns:NotificationResponse" />
+  <xs:complexType name="EAICustomError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessMessageAr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessMessageEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EAICustomError" nillable="true" type="tns:EAICustomError" />
+  <xs:complexType name="SendEmailRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmailAttachments" nillable="true" type="tns:ArrayOfEmailAttachment" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailBCC" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailCC" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailTo" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="IsArabic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RefrenceId" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Tables" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element minOccurs="0" name="TemplateCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TemplateValues" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendEmailRequest" nillable="true" type="tns:SendEmailRequest" />
+  <xs:complexType name="ArrayOfEmailAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmailAttachment" nillable="true" type="tns:EmailAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmailAttachment" nillable="true" type="tns:ArrayOfEmailAttachment" />
+  <xs:complexType name="EmailAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailAttachment" nillable="true" type="tns:EmailAttachment" />
+  <xs:complexType name="SendOTPRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsArabic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MobileNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SendOTPRequest" nillable="true" type="tns:SendOTPRequest" />
+  <xs:complexType name="VerifyOTPRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerifyOTPRequest" nillable="true" type="tns:VerifyOTPRequest" />
+  <xs:complexType name="VerifyOTPResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerifyOTPResponse" nillable="true" type="tns:VerifyOTPResponse" />
+</xs:schema>

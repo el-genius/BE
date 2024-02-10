@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BillingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillingService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillingService_GenerateSadadBillMci_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillingService_GenerateSadadBillThiqah_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillingService_InitCreditCardPayment_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillingService_ConfirmCreditCardPayment_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillingService_InitOLPPayment_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillingService_ConfirmOLPPayment_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillingService_UpdateBillMetadata_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBillingService_CancelBillByBillReferenceNumber_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://eai-test-payment.thiqah.sa/API/2.0/PaymentServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://eai-test-payment.thiqah.sa/API/2.0/PaymentServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" />
+      <xsd:import schemaLocation="https://eai-test-payment.thiqah.sa/API/2.0/PaymentServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://eai-test-payment.thiqah.sa/API/2.0/PaymentServices.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBillingService_GenerateSadadBillMci_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateSadadBillMci" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GenerateSadadBillMci_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateSadadBillMciResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GenerateSadadBillMci_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q1:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GenerateSadadBillThiqah_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateSadadBillThiqah" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GenerateSadadBillThiqah_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateSadadBillThiqahResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GenerateSadadBillThiqah_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q2:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InitCreditCardPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitCreditCardPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InitCreditCardPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitCreditCardPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InitCreditCardPayment_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q3:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ConfirmCreditCardPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmCreditCardPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ConfirmCreditCardPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmCreditCardPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ConfirmCreditCardPayment_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q4:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InitOLPPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitOLPPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InitOLPPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitOLPPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InitOLPPayment_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q5:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ConfirmOLPPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmOLPPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ConfirmOLPPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmOLPPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ConfirmOLPPayment_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q6:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateBillMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBillMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateBillMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBillMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateBillMetadata_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q7:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_CancelBillByBillReferenceNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelBillByBillReferenceNumber" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_CancelBillByBillReferenceNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelBillByBillReferenceNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_CancelBillByBillReferenceNumber_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q8:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetBillCost_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillCost" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetBillCost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetBillCost_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q9:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetBillDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillDetail" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetBillDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetBillDetail_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q10:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_BillInquiries_InputMessage">
+    <wsdl:part name="parameters" element="tns:BillInquiries" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_BillInquiries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BillInquiriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_BillInquiries_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q11:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DownloadBillSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadBillSummary" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DownloadBillSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadBillSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DownloadBillSummary_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q12:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DownloadBillSummaryForCustomerCare_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadBillSummaryForCustomerCare" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DownloadBillSummaryForCustomerCare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadBillSummaryForCustomerCareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DownloadBillSummaryForCustomerCare_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q13:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ValidateBillGeneration_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBillGeneration" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ValidateBillGeneration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBillGenerationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ValidateBillGeneration_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" name="detail" element="q14:EAICustomError" />
+  </wsdl:message>
+  <wsdl:portType name="IBillingService">
+    <wsdl:operation name="GenerateSadadBillMci">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/GenerateSadadBillMci" message="tns:IBillingService_GenerateSadadBillMci_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/GenerateSadadBillMciResponse" message="tns:IBillingService_GenerateSadadBillMci_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/GenerateSadadBillMciEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_GenerateSadadBillMci_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateSadadBillThiqah">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/GenerateSadadBillThiqah" message="tns:IBillingService_GenerateSadadBillThiqah_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/GenerateSadadBillThiqahResponse" message="tns:IBillingService_GenerateSadadBillThiqah_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/GenerateSadadBillThiqahEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_GenerateSadadBillThiqah_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitCreditCardPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InitCreditCardPayment" message="tns:IBillingService_InitCreditCardPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InitCreditCardPaymentResponse" message="tns:IBillingService_InitCreditCardPayment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/InitCreditCardPaymentEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_InitCreditCardPayment_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmCreditCardPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/ConfirmCreditCardPayment" message="tns:IBillingService_ConfirmCreditCardPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/ConfirmCreditCardPaymentResponse" message="tns:IBillingService_ConfirmCreditCardPayment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/ConfirmCreditCardPaymentEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_ConfirmCreditCardPayment_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitOLPPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InitOLPPayment" message="tns:IBillingService_InitOLPPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InitOLPPaymentResponse" message="tns:IBillingService_InitOLPPayment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/InitOLPPaymentEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_InitOLPPayment_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmOLPPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/ConfirmOLPPayment" message="tns:IBillingService_ConfirmOLPPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/ConfirmOLPPaymentResponse" message="tns:IBillingService_ConfirmOLPPayment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/ConfirmOLPPaymentEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_ConfirmOLPPayment_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBillMetadata">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/UpdateBillMetadata" message="tns:IBillingService_UpdateBillMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/UpdateBillMetadataResponse" message="tns:IBillingService_UpdateBillMetadata_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/UpdateBillMetadataEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_UpdateBillMetadata_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBillByBillReferenceNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/CancelBillByBillReferenceNumber" message="tns:IBillingService_CancelBillByBillReferenceNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/CancelBillByBillReferenceNumberResponse" message="tns:IBillingService_CancelBillByBillReferenceNumber_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/CancelBillByBillReferenceNumberEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_CancelBillByBillReferenceNumber_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillCost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/GetBillCost" message="tns:IBillingService_GetBillCost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/GetBillCostResponse" message="tns:IBillingService_GetBillCost_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/GetBillCostEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_GetBillCost_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/GetBillDetail" message="tns:IBillingService_GetBillDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/GetBillDetailResponse" message="tns:IBillingService_GetBillDetail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/GetBillDetailEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_GetBillDetail_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BillInquiries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/BillInquiries" message="tns:IBillingService_BillInquiries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/BillInquiriesResponse" message="tns:IBillingService_BillInquiries_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/BillInquiriesEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_BillInquiries_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadBillSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DownloadBillSummary" message="tns:IBillingService_DownloadBillSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DownloadBillSummaryResponse" message="tns:IBillingService_DownloadBillSummary_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/DownloadBillSummaryEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_DownloadBillSummary_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadBillSummaryForCustomerCare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DownloadBillSummaryForCustomerCare" message="tns:IBillingService_DownloadBillSummaryForCustomerCare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DownloadBillSummaryForCustomerCareResponse" message="tns:IBillingService_DownloadBillSummaryForCustomerCare_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/DownloadBillSummaryForCustomerCareEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_DownloadBillSummaryForCustomerCare_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBillGeneration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/ValidateBillGeneration" message="tns:IBillingService_ValidateBillGeneration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/ValidateBillGenerationResponse" message="tns:IBillingService_ValidateBillGeneration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IBillingService/ValidateBillGenerationEAICustomErrorFault" name="EAICustomErrorFault" message="tns:IBillingService_ValidateBillGeneration_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IBillingService" type="tns:IBillingService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IBillingService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GenerateSadadBillMci">
+      <wsp:PolicyReference URI="#WSHttpBinding_IBillingService_GenerateSadadBillMci_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/GenerateSadadBillMci" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateSadadBillThiqah">
+      <wsp:PolicyReference URI="#WSHttpBinding_IBillingService_GenerateSadadBillThiqah_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/GenerateSadadBillThiqah" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InitCreditCardPayment">
+      <wsp:PolicyReference URI="#WSHttpBinding_IBillingService_InitCreditCardPayment_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/InitCreditCardPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmCreditCardPayment">
+      <wsp:PolicyReference URI="#WSHttpBinding_IBillingService_ConfirmCreditCardPayment_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/ConfirmCreditCardPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InitOLPPayment">
+      <wsp:PolicyReference URI="#WSHttpBinding_IBillingService_InitOLPPayment_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/InitOLPPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmOLPPayment">
+      <wsp:PolicyReference URI="#WSHttpBinding_IBillingService_ConfirmOLPPayment_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/ConfirmOLPPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBillMetadata">
+      <wsp:PolicyReference URI="#WSHttpBinding_IBillingService_UpdateBillMetadata_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/UpdateBillMetadata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBillByBillReferenceNumber">
+      <wsp:PolicyReference URI="#WSHttpBinding_IBillingService_CancelBillByBillReferenceNumber_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/CancelBillByBillReferenceNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillCost">
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/GetBillCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillDetail">
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/GetBillDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BillInquiries">
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/BillInquiries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadBillSummary">
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/DownloadBillSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadBillSummaryForCustomerCare">
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/DownloadBillSummaryForCustomerCare" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBillGeneration">
+      <soap12:operation soapAction="http://tempuri.org/IBillingService/ValidateBillGeneration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap12:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillingService">
+    <wsdl:port name="WSHttpBinding_IBillingService" binding="tns:WSHttpBinding_IBillingService">
+      <soap12:address location="https://eai-test-payment.thiqah.sa/API/2.0/PaymentServices.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://eai-test-payment.thiqah.sa/API/2.0/PaymentServices.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

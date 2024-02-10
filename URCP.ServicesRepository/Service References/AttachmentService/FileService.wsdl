@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FileService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract" />
+      <xsd:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.UploadService" />
+      <xsd:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.PeekService" />
+      <xsd:import schemaLocation="http://172.20.46.6/mci/FileService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract.DownloadService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAttachmentService_Upload_InputMessage">
+    <wsdl:part name="parameters" element="tns:Upload" />
+  </wsdl:message>
+  <wsdl:message name="IAttachmentService_Upload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttachmentService_Upload_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract" name="detail" element="q1:Error" />
+  </wsdl:message>
+  <wsdl:message name="IAttachmentService_Peek_InputMessage">
+    <wsdl:part name="parameters" element="tns:Peek" />
+  </wsdl:message>
+  <wsdl:message name="IAttachmentService_Peek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttachmentService_Peek_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract" name="detail" element="q2:Error" />
+  </wsdl:message>
+  <wsdl:message name="IAttachmentService_Download_InputMessage">
+    <wsdl:part name="parameters" element="tns:Download" />
+  </wsdl:message>
+  <wsdl:message name="IAttachmentService_Download_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttachmentService_Download_ErrorFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Thiqah.FileService.ServiceContract" name="detail" element="q3:Error" />
+  </wsdl:message>
+  <wsdl:portType name="IAttachmentService">
+    <wsdl:operation name="Upload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttachmentService/Upload" message="tns:IAttachmentService_Upload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttachmentService/UploadResponse" message="tns:IAttachmentService_Upload_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAttachmentService/UploadErrorFault" name="ErrorFault" message="tns:IAttachmentService_Upload_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Peek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttachmentService/Peek" message="tns:IAttachmentService_Peek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttachmentService/PeekResponse" message="tns:IAttachmentService_Peek_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAttachmentService/PeekErrorFault" name="ErrorFault" message="tns:IAttachmentService_Peek_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttachmentService/Download" message="tns:IAttachmentService_Download_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttachmentService/DownloadResponse" message="tns:IAttachmentService_Download_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IAttachmentService/DownloadErrorFault" name="ErrorFault" message="tns:IAttachmentService_Download_ErrorFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttp_IService" type="tns:IAttachmentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Upload">
+      <soap:operation soapAction="http://tempuri.org/IAttachmentService/Upload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Peek">
+      <soap:operation soapAction="http://tempuri.org/IAttachmentService/Peek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <soap:operation soapAction="http://tempuri.org/IAttachmentService/Download" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ErrorFault">
+        <soap:fault use="literal" name="ErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileService">
+    <wsdl:port name="BasicHttp_IService" binding="tns:BasicHttp_IService">
+      <soap:address location="http://172.20.46.6/mci/FileService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EFileService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EFile.Core.DTO" />
+      <xsd:import schemaLocation="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EFile.WebUI.WServices" />
+      <xsd:import schemaLocation="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/EFile.WebUI.Models" />
+      <xsd:import schemaLocation="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/EFile.WebUI.Helpers" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEFileService_GetPersonByUserIDandClientID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByUserIDandClientID" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPersonByUserIDandClientID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByUserIDandClientIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPersonByUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByUserID" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPersonByUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPersonByNID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByNID" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPersonByNID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByNIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPersonByFIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByFIN" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPersonByFIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByFINResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_CheckPersonStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPersonStatus" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_CheckPersonStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPersonStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerson" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPerson_EFileServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/EFile.WebUI.WServices" name="detail" element="q1:EFileServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetContactOfficerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactOfficerInfo" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetContactOfficerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactOfficerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPersonAddressByNID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonAddressByNID" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetPersonAddressByNID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonAddressByNIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_Authenticated_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticated" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_Authenticated_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetUsernameByAccessToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsernameByAccessToken" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetUsernameByAccessToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsernameByAccessTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_CheckToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckToken" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_CheckToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_CheckUserToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserToken" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_CheckUserToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_IsAuthenticated_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAuthenticated" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_IsAuthenticated_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAuthenticatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_UpdatePersonInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonInfo" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_UpdatePersonInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_UpdatePersonAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonAddress" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_UpdatePersonAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetDelegatedReferencesByServiceID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelegatedReferencesByServiceID" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetDelegatedReferencesByServiceID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelegatedReferencesByServiceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetDelegatedReferences_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelegatedReferences" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetDelegatedReferences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelegatedReferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetAllDelegationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDelegationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetAllDelegationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDelegationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetAllDelegationInfoByCrNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDelegationInfoByCrNumber" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetAllDelegationInfoByCrNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDelegationInfoByCrNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetListOfAllDelegationsInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfAllDelegationsInfo" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetListOfAllDelegationsInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfAllDelegationsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetAllBeneficiariesByCrNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBeneficiariesByCrNumber" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetAllBeneficiariesByCrNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBeneficiariesByCrNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_SendSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_SendSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetBlackListedServicesByServiceID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlackListedServicesByServiceID" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetBlackListedServicesByServiceID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlackListedServicesByServiceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetRolesByClientID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesByClientID" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetRolesByClientID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesByClientIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetUserRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetUserRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCities" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetDistricts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistricts" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_GetDistricts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrictsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_PasswordRecovery_InputMessage">
+    <wsdl:part name="parameters" element="tns:PasswordRecovery" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_PasswordRecovery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PasswordRecoveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_ChangePersonPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePersonPassword" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_ChangePersonPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePersonPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_ChangePersonPasswordByAccessToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePersonPasswordByAccessToken" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_ChangePersonPasswordByAccessToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePersonPasswordByAccessTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_AuthenticateByAbsherMobile_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateByAbsherMobile" />
+  </wsdl:message>
+  <wsdl:message name="IEFileService_AuthenticateByAbsherMobile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateByAbsherMobileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEFileService">
+    <wsdl:operation name="GetPersonByUserIDandClientID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetPersonByUserIDandClientID" message="tns:IEFileService_GetPersonByUserIDandClientID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetPersonByUserIDandClientIDResponse" message="tns:IEFileService_GetPersonByUserIDandClientID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetPersonByUserID" message="tns:IEFileService_GetPersonByUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetPersonByUserIDResponse" message="tns:IEFileService_GetPersonByUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByNID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetPersonByNID" message="tns:IEFileService_GetPersonByNID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetPersonByNIDResponse" message="tns:IEFileService_GetPersonByNID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByFIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetPersonByFIN" message="tns:IEFileService_GetPersonByFIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetPersonByFINResponse" message="tns:IEFileService_GetPersonByFIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPersonStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/CheckPersonStatus" message="tns:IEFileService_CheckPersonStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/CheckPersonStatusResponse" message="tns:IEFileService_CheckPersonStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetPerson" message="tns:IEFileService_GetPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetPersonResponse" message="tns:IEFileService_GetPerson_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IEFileService/GetPersonEFileServiceExceptionFault" name="EFileServiceExceptionFault" message="tns:IEFileService_GetPerson_EFileServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactOfficerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetContactOfficerInfo" message="tns:IEFileService_GetContactOfficerInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetContactOfficerInfoResponse" message="tns:IEFileService_GetContactOfficerInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonAddressByNID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetPersonAddressByNID" message="tns:IEFileService_GetPersonAddressByNID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetPersonAddressByNIDResponse" message="tns:IEFileService_GetPersonAddressByNID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticated">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/Authenticated" message="tns:IEFileService_Authenticated_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/AuthenticatedResponse" message="tns:IEFileService_Authenticated_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsernameByAccessToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetUsernameByAccessToken" message="tns:IEFileService_GetUsernameByAccessToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetUsernameByAccessTokenResponse" message="tns:IEFileService_GetUsernameByAccessToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/CheckToken" message="tns:IEFileService_CheckToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/CheckTokenResponse" message="tns:IEFileService_CheckToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/CheckUserToken" message="tns:IEFileService_CheckUserToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/CheckUserTokenResponse" message="tns:IEFileService_CheckUserToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAuthenticated">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/IsAuthenticated" message="tns:IEFileService_IsAuthenticated_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/IsAuthenticatedResponse" message="tns:IEFileService_IsAuthenticated_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/UpdatePersonInfo" message="tns:IEFileService_UpdatePersonInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/UpdatePersonInfoResponse" message="tns:IEFileService_UpdatePersonInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/UpdatePersonAddress" message="tns:IEFileService_UpdatePersonAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/UpdatePersonAddressResponse" message="tns:IEFileService_UpdatePersonAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDelegatedReferencesByServiceID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetDelegatedReferencesByServiceID" message="tns:IEFileService_GetDelegatedReferencesByServiceID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetDelegatedReferencesByServiceIDResponse" message="tns:IEFileService_GetDelegatedReferencesByServiceID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDelegatedReferences">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetDelegatedReferences" message="tns:IEFileService_GetDelegatedReferences_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetDelegatedReferencesResponse" message="tns:IEFileService_GetDelegatedReferences_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDelegationInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetAllDelegationInfo" message="tns:IEFileService_GetAllDelegationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetAllDelegationInfoResponse" message="tns:IEFileService_GetAllDelegationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDelegationInfoByCrNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetAllDelegationInfoByCrNumber" message="tns:IEFileService_GetAllDelegationInfoByCrNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetAllDelegationInfoByCrNumberResponse" message="tns:IEFileService_GetAllDelegationInfoByCrNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAllDelegationsInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetListOfAllDelegationsInfo" message="tns:IEFileService_GetListOfAllDelegationsInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetListOfAllDelegationsInfoResponse" message="tns:IEFileService_GetListOfAllDelegationsInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBeneficiariesByCrNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetAllBeneficiariesByCrNumber" message="tns:IEFileService_GetAllBeneficiariesByCrNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetAllBeneficiariesByCrNumberResponse" message="tns:IEFileService_GetAllBeneficiariesByCrNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/SendSMS" message="tns:IEFileService_SendSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/SendSMSResponse" message="tns:IEFileService_SendSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackListedServicesByServiceID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetBlackListedServicesByServiceID" message="tns:IEFileService_GetBlackListedServicesByServiceID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetBlackListedServicesByServiceIDResponse" message="tns:IEFileService_GetBlackListedServicesByServiceID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesByClientID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetRolesByClientID" message="tns:IEFileService_GetRolesByClientID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetRolesByClientIDResponse" message="tns:IEFileService_GetRolesByClientID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetUserRoles" message="tns:IEFileService_GetUserRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetUserRolesResponse" message="tns:IEFileService_GetUserRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetCountries" message="tns:IEFileService_GetCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetCountriesResponse" message="tns:IEFileService_GetCountries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetCities" message="tns:IEFileService_GetCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetCitiesResponse" message="tns:IEFileService_GetCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistricts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/GetDistricts" message="tns:IEFileService_GetDistricts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/GetDistrictsResponse" message="tns:IEFileService_GetDistricts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/Logout" message="tns:IEFileService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/LogoutResponse" message="tns:IEFileService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/Login" message="tns:IEFileService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/LoginResponse" message="tns:IEFileService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PasswordRecovery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/PasswordRecovery" message="tns:IEFileService_PasswordRecovery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/PasswordRecoveryResponse" message="tns:IEFileService_PasswordRecovery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/ChangePersonPassword" message="tns:IEFileService_ChangePersonPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/ChangePersonPasswordResponse" message="tns:IEFileService_ChangePersonPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonPasswordByAccessToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/ChangePersonPasswordByAccessToken" message="tns:IEFileService_ChangePersonPasswordByAccessToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/ChangePersonPasswordByAccessTokenResponse" message="tns:IEFileService_ChangePersonPasswordByAccessToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateByAbsherMobile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEFileService/AuthenticateByAbsherMobile" message="tns:IEFileService_AuthenticateByAbsherMobile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEFileService/AuthenticateByAbsherMobileResponse" message="tns:IEFileService_AuthenticateByAbsherMobile_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEFileService" type="tns:IEFileService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPersonByUserIDandClientID">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetPersonByUserIDandClientID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByUserID">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetPersonByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByNID">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetPersonByNID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByFIN">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetPersonByFIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPersonStatus">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/CheckPersonStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerson">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EFileServiceExceptionFault">
+        <soap:fault use="literal" name="EFileServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactOfficerInfo">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetContactOfficerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonAddressByNID">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetPersonAddressByNID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticated">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/Authenticated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsernameByAccessToken">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetUsernameByAccessToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckToken">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/CheckToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserToken">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/CheckUserToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAuthenticated">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/IsAuthenticated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonInfo">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/UpdatePersonInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonAddress">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/UpdatePersonAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDelegatedReferencesByServiceID">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetDelegatedReferencesByServiceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDelegatedReferences">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetDelegatedReferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDelegationInfo">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetAllDelegationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDelegationInfoByCrNumber">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetAllDelegationInfoByCrNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAllDelegationsInfo">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetListOfAllDelegationsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBeneficiariesByCrNumber">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetAllBeneficiariesByCrNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackListedServicesByServiceID">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetBlackListedServicesByServiceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesByClientID">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetRolesByClientID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoles">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetUserRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistricts">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/GetDistricts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordRecovery">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/PasswordRecovery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonPassword">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/ChangePersonPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonPasswordByAccessToken">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/ChangePersonPasswordByAccessToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateByAbsherMobile">
+      <soap:operation soapAction="http://tempuri.org/IEFileService/AuthenticateByAbsherMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EFileService">
+    <wsdl:port name="BasicHttpBinding_IEFileService" binding="tns:BasicHttpBinding_IEFileService">
+      <soap:address location="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8177506C-101F-4797-8699-7E17EE63A675}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>URCP.ServicesRepository</RootNamespace>
+    <AssemblyName>URCP.ServicesRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\Mapper.cs" />
+    <Compile Include="Repository\AttachmentRepository.cs" />
+    <Compile Include="Repository\CrRepository.cs" />
+    <Compile Include="Repository\eFileRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\NotificationRepository.cs" />
+    <Compile Include="Repository\PaymentRepository.cs" />
+    <Compile Include="Service References\AttachmentService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CrService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\eFileService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NotificationGateway\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PaymentService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceCredentials.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\URCP.ServicesRepository.Interface\URCP.ServicesRepository.Interface.csproj">
+      <Project>{70b752ed-a2c5-4757-b190-39af83c0ee9f}</Project>
+      <Name>URCP.ServicesRepository.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\URCP.Core\URCP.Core.csproj">
+      <Project>{8d694868-767b-4507-84ac-a916f472f8fd}</Project>
+      <Name>URCP.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\URCP.RepositoryInterface\URCP.RepositoryInterface.csproj">
+      <Project>{7e381ccd-1ba7-4823-9a1f-76884e7b5430}</Project>
+      <Name>URCP.RepositoryInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\URCP.Resources\URCP.Resources.csproj">
+      <Project>{73BB76C6-ABFC-4C56-946F-40CF0F5397DD}</Project>
+      <Name>URCP.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttachmentService\FileService.wsdl" />
+    <None Include="Service References\AttachmentService\FileService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttachmentService\FileService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttachmentService\FileService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttachmentService\FileService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttachmentService\FileService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttachmentService\FileService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AttachmentService\URCP.ServicesRepository.AttachmentService.DownloadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttachmentService\URCP.ServicesRepository.AttachmentService.PeekResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AttachmentService\URCP.ServicesRepository.AttachmentService.UploadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrService\CRService.wsdl" />
+    <None Include="Service References\CrService\CRService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CrService\CRService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CrService\CRService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CrService\CRService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CrService\CRService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CrService\URCP.ServicesRepository.CrService.CRInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrService\URCP.ServicesRepository.CrService.CRsByNIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrService\URCP.ServicesRepository.CrService.CRsByPartyIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrService\URCP.ServicesRepository.CrService.Lookup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrService\URCP.ServicesRepository.CrService.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrService\URCP.ServicesRepository.CrService.ReferenceDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrService\URCP.ServicesRepository.CrService.SearchForCompanyCrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CrService\URCP.ServicesRepository.CrService.SearchForCrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\EFileService1.wsdl" />
+    <None Include="Service References\eFileService\EFileService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\eFileService\EFileService61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\eFileService\EFileService62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\eFileService\EFileService63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\eFileService\EFileService64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\eFileService\EFileService65.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\eFileService\EFileService66.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.AccessTokenModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServiceAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServiceBlackListed.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServiceCity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServiceContactOfficer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServiceCountry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServiceDelegated.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServiceDelegation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServiceDelegationDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServiceDistrict.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServicePerson.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\eFileService\URCP.ServicesRepository.eFileService.EFileServiceRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NotificationGateway\NotificationGateway.wsdl" />
+    <None Include="Service References\NotificationGateway\NotificationGateway.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NotificationGateway\NotificationGateway1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NotificationGateway\NotificationGateway2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NotificationGateway\NotificationGateway3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NotificationGateway\URCP.ServicesRepository.NotificationGateway.NotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NotificationGateway\URCP.ServicesRepository.NotificationGateway.VerifyOTPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentService\BillingService.wsdl" />
+    <None Include="Service References\PaymentService\PaymentServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentService\PaymentServices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentService\PaymentServices2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentService\PaymentServices3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PaymentService\URCP.ServicesRepository.PaymentService.ChangeBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentService\URCP.ServicesRepository.PaymentService.CheckBillCostResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentService\URCP.ServicesRepository.PaymentService.ConfirmPaymentBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentService\URCP.ServicesRepository.PaymentService.GenerateBillSadadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentService\URCP.ServicesRepository.PaymentService.GenerateCreditCardBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentService\URCP.ServicesRepository.PaymentService.GenerateOLPBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentService\URCP.ServicesRepository.PaymentService.GetBillDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PaymentService\URCP.ServicesRepository.PaymentService.ValidateBillGenerationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AttachmentService\" />
+    <WCFMetadataStorage Include="Service References\CrService\" />
+    <WCFMetadataStorage Include="Service References\eFileService\" />
+    <WCFMetadataStorage Include="Service References\NotificationGateway\" />
+    <WCFMetadataStorage Include="Service References\PaymentService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\eFileService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\eFileService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\eFileService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaymentService\PaymentServices.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaymentService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaymentService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PaymentService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AttachmentService\FileService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AttachmentService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AttachmentService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AttachmentService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrService\CRService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NotificationGateway\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NotificationGateway\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NotificationGateway\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

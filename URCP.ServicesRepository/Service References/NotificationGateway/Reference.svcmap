@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e6af72e6-d06a-45d5-9b42-862853bcd5e8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NotificationGateway.xsd" MetadataType="Schema" ID="0dccf058-29df-475d-841c-430c67db0958" SourceId="1" SourceUrl="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc?xsd=xsd3" />
+    <MetadataFile FileName="NotificationGateway1.xsd" MetadataType="Schema" ID="33f2d278-9696-4a5b-b45f-9fa2373e0089" SourceId="1" SourceUrl="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc?xsd=xsd2" />
+    <MetadataFile FileName="NotificationGateway2.xsd" MetadataType="Schema" ID="7bbecb30-b4d6-4356-ab97-02ed47f47a86" SourceId="1" SourceUrl="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc?xsd=xsd1" />
+    <MetadataFile FileName="NotificationGateway3.xsd" MetadataType="Schema" ID="607f49a5-bd82-4b26-b424-43a687a5b52b" SourceId="1" SourceUrl="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc?xsd=xsd0" />
+    <MetadataFile FileName="NotificationGateway.wsdl" MetadataType="Wsdl" ID="b1a08676-8831-4a7d-b121-bb9ee2d062ce" SourceId="1" SourceUrl="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

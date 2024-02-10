@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://eai-test-payment.thiqah.sa/API/2.0/PaymentServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" />
+  <xs:element name="GenerateSadadBillMci">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q1:GenerateBillSadadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateSadadBillMciResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="GenerateSadadBillMciResult" nillable="true" type="q2:GenerateBillSadadResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateSadadBillThiqah">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q3:GenerateBillSadadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateSadadBillThiqahResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="GenerateSadadBillThiqahResult" nillable="true" type="q4:GenerateBillSadadResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitCreditCardPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q5:GenerateCreditCardBillRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitCreditCardPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="InitCreditCardPaymentResult" nillable="true" type="q6:GenerateCreditCardBillResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmCreditCardPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="merchantReference" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmCreditCardPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="ConfirmCreditCardPaymentResult" nillable="true" type="q7:ConfirmPaymentBillResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitOLPPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q8:GenerateOLPBillRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitOLPPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="InitOLPPaymentResult" nillable="true" type="q9:GenerateOLPBillResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmOLPPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="merchantReference" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmOLPPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="ConfirmOLPPaymentResult" nillable="true" type="q10:ConfirmPaymentBillResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBillMetadata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q11:UpdateBillDetailMetadata" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBillMetadataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBillMetadataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelBillByBillReferenceNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q12:CancelBillByBillReferenceNumberRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelBillByBillReferenceNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="CancelBillByBillReferenceNumberResult" nillable="true" type="q13:ChangeBillResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillCost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q14:GenerateBillSadadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillCostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="GetBillCostResult" nillable="true" type="q15:CheckBillCostResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RefId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RefDesc" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="GetBillDetailResult" nillable="true" type="q16:GetBillDetailResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BillInquiries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q17:BillInquiriesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BillInquiriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="BillInquiriesResult" nillable="true" type="q18:GetBillDetailResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadBillSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q19:DownloadBillSummaryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadBillSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadBillSummaryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadBillSummaryForCustomerCare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q20:DownloadBillSummaryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadBillSummaryForCustomerCareResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadBillSummaryForCustomerCareResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateBillGeneration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="request" nillable="true" type="q21:GenerateBillSadadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateBillGenerationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/MCIBilling.WebService" minOccurs="0" name="ValidateBillGenerationResult" nillable="true" type="q22:ValidateBillGenerationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NotificationGateway" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_INotificationGateway_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/NotificationsGateway" />
+      <xsd:import schemaLocation="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INotificationGateway_SendSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendSMS_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/NotificationsGateway" name="detail" element="q1:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendEmail_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/NotificationsGateway" name="detail" element="q2:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendRestSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendRestSMS" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendRestSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendRestSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendRestSMS_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/NotificationsGateway" name="detail" element="q3:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendOTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendOTP" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendOTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_SendOTP_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/NotificationsGateway" name="detail" element="q4:EAICustomError" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_VerifyOTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyOTP" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_VerifyOTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationGateway_VerifyOTP_EAICustomErrorFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/NotificationsGateway" name="detail" element="q5:EAICustomError" />
+  </wsdl:message>
+  <wsdl:portType name="INotificationGateway">
+    <wsdl:operation name="SendSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationGateway/SendSMS" message="tns:INotificationGateway_SendSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationGateway/SendSMSResponse" message="tns:INotificationGateway_SendSMS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INotificationGateway/SendSMSEAICustomErrorFault" name="EAICustomErrorFault" message="tns:INotificationGateway_SendSMS_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationGateway/SendEmail" message="tns:INotificationGateway_SendEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationGateway/SendEmailResponse" message="tns:INotificationGateway_SendEmail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INotificationGateway/SendEmailEAICustomErrorFault" name="EAICustomErrorFault" message="tns:INotificationGateway_SendEmail_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendRestSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationGateway/SendRestSMS" message="tns:INotificationGateway_SendRestSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationGateway/SendRestSMSResponse" message="tns:INotificationGateway_SendRestSMS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INotificationGateway/SendRestSMSEAICustomErrorFault" name="EAICustomErrorFault" message="tns:INotificationGateway_SendRestSMS_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationGateway/SendOTP" message="tns:INotificationGateway_SendOTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationGateway/SendOTPResponse" message="tns:INotificationGateway_SendOTP_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INotificationGateway/SendOTPEAICustomErrorFault" name="EAICustomErrorFault" message="tns:INotificationGateway_SendOTP_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotificationGateway/VerifyOTP" message="tns:INotificationGateway_VerifyOTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotificationGateway/VerifyOTPResponse" message="tns:INotificationGateway_VerifyOTP_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INotificationGateway/VerifyOTPEAICustomErrorFault" name="EAICustomErrorFault" message="tns:INotificationGateway_VerifyOTP_EAICustomErrorFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INotificationGateway" type="tns:INotificationGateway">
+    <wsp:PolicyReference URI="#BasicHttpBinding_INotificationGateway_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://tempuri.org/INotificationGateway/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap:operation soapAction="http://tempuri.org/INotificationGateway/SendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendRestSMS">
+      <soap:operation soapAction="http://tempuri.org/INotificationGateway/SendRestSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <soap:operation soapAction="http://tempuri.org/INotificationGateway/SendOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOTP">
+      <soap:operation soapAction="http://tempuri.org/INotificationGateway/VerifyOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EAICustomErrorFault">
+        <soap:fault use="literal" name="EAICustomErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NotificationGateway">
+    <wsdl:port name="BasicHttpBinding_INotificationGateway" binding="tns:BasicHttpBinding_INotificationGateway">
+      <soap:address location="https://eai_dev001.mci.gov.sa/NotificationGateway/1.1/NotificationGateway.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

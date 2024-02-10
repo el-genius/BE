@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="100dd3e6-af28-4c00-9da3-e64eb13e4c13" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EFileService6.xsd" MetadataType="Schema" ID="32ef2285-2ffe-48e5-968d-3bdde525b605" SourceId="1" SourceUrl="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd3" />
+    <MetadataFile FileName="EFileService61.xsd" MetadataType="Schema" ID="f8a048cb-6c50-4b2e-ac0f-7f04a733ab21" SourceId="1" SourceUrl="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EFileService62.xsd" MetadataType="Schema" ID="079d60a5-b9d4-45ae-ad09-5b4c8eb966da" SourceId="1" SourceUrl="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd6" />
+    <MetadataFile FileName="EFileService63.xsd" MetadataType="Schema" ID="b3edaeab-c304-4674-aa9b-56ac4cb00b00" SourceId="1" SourceUrl="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd4" />
+    <MetadataFile FileName="EFileService1.wsdl" MetadataType="Wsdl" ID="7022cf2b-ccec-48a2-ad34-4af23960c7e6" SourceId="1" SourceUrl="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?wsdl" />
+    <MetadataFile FileName="EFileService64.xsd" MetadataType="Schema" ID="e4842adb-a89d-407b-a716-0c53b892a975" SourceId="1" SourceUrl="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EFileService65.xsd" MetadataType="Schema" ID="f6adfc92-46ca-4973-acde-1f65a9f6c703" SourceId="1" SourceUrl="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EFileService66.xsd" MetadataType="Schema" ID="2bbf0d3c-7513-47c6-9f73-eb989cb149bc" SourceId="1" SourceUrl="http://10.10.52.106:9998/production-release3/WServices/EFileService.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

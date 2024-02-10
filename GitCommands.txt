@@ -1,0 +1,16 @@
+1- 
+
+git config --global credential.https://tfs.thiqah.sa:44344/tfs/.integrated true
+
+Git failed with a fatal error.
+Authentication failed for 'https://tfs.thiqah.sa:44344/tfs/defaultcollection/STRBayan/STRBayan%20Team/_git/STRBayan/'
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+2-
+
+increase push buffer
+
+git config http.postBuffer 524288000
+
+--------------------------------------------------------------------------------------------------------------------------------------------

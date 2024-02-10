@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF5A2C51-3401-4FD6-9AD6-44BAFD8A3861}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>URCP.Domain.Interface</RootNamespace>
+    <AssemblyName>URCP.Domain.Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IAttachmentService.cs" />
+    <Compile Include="ICountryService.cs" />
+    <Compile Include="ICrService.cs" />
+    <Compile Include="IeFileService.cs" />
+    <Compile Include="IEmailNotificationService.cs" />
+    <Compile Include="IReverseMortgageAirplaneDetailService.cs" />
+    <Compile Include="IReverseMortgageService.cs" />
+    <Compile Include="IPaymentService.cs" />
+    <Compile Include="ILookupService.cs" />
+    <Compile Include="IReverseMortgageShipDetailService.cs" />
+    <Compile Include="IReverseMortgageTrademarkDetailService.cs" />
+    <Compile Include="IRoleService.cs" />
+    <Compile Include="ISadadInvoice.cs" />
+    <Compile Include="ISettingService.cs" />
+    <Compile Include="ISmsNotificationService.cs" />
+    <Compile Include="IUserMorgageMoneyTypeService.cs" />
+    <Compile Include="IUserService.cs" />
+    <Compile Include="IInvoiceService.cs" />
+    <Compile Include="IMortgageImplementationAgentService.cs" />
+    <Compile Include="IMortgageObjectionService.cs" />
+    <Compile Include="IMortgageService.cs" />
+    <Compile Include="IMortgageInquiryService.cs" />
+    <Compile Include="IRequestService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\URCP\URCP.Core\URCP.Core.csproj">
+      <Project>{8d694868-767b-4507-84ac-a916f472f8fd}</Project>
+      <Name>URCP.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\URCP\URCP.RepositoryInterface\URCP.RepositoryInterface.csproj">
+      <Project>{7E381CCD-1BA7-4823-9A1F-76884E7B5430}</Project>
+      <Name>URCP.RepositoryInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

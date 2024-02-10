@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="URCP.WebSvc.BillingCallback" CodeBehind="BillingCallback.svc.cs"  Factory="URCP.WebSvc.UnityServiceHostFactory" %>
